@@ -11,8 +11,13 @@ composeBom = "2024.09.00"
 
 retrofit = "3.0.0"
 room = "2.4.3"
-
 com-google-devtools-ksp = "2.0.21-1.0.25"
+
+#test
+
+junit-jupiter = "5.9.3"
+assertk = "0.26.1"
+de-mannodermaus-android-junit5 = "1.9.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +46,16 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room"  }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"  }
 
+# Tests
+
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit-jupiter" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit-jupiter" }
+junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit-jupiter" }
+
+assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
+
+
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -48,3 +63,6 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "com-google-devtools-ksp" }
 
+# test
+
+de-mannodermaus-android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "de-mannodermaus-android-junit5" }
