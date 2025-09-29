@@ -12,7 +12,7 @@ import kotlin.coroutines.coroutineContext
 
 
 suspend inline fun <reified T> safeCall(
-    execute: () -> Response<T>
+    execute: () -> T
 ): Resource<T> {
     val response = try {
         execute()
@@ -31,7 +31,7 @@ suspend inline fun <reified T> safeCall(
         return Resource.Failure(DataError.Remote.UNKNOWN)
     }
 
-    return responseToResult(response)
+    return responseToResult(response as Response<T>)
 }
 
 fun <T> responseToResult(
