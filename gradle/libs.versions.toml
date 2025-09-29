@@ -19,6 +19,7 @@ okhttp = "5.0.0-alpha.11"
 junit-jupiter = "5.9.3"
 assertk = "0.26.1"
 de-mannodermaus-android-junit5 = "1.9.3.0"
+kotlinx-coroutines-test = "1.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -59,7 +60,7 @@ junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-para
 
 assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
 
-
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
