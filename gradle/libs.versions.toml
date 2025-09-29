@@ -12,6 +12,7 @@ composeBom = "2024.09.00"
 retrofit = "3.0.0"
 room = "2.4.3"
 com-google-devtools-ksp = "2.0.21-1.0.25"
+okhttp = "5.0.0-alpha.11"
 
 #test
 
@@ -39,6 +40,10 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+
+# okhttp
+
+okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
 
 #Room
 
