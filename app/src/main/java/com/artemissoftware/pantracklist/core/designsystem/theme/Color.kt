@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.ui.theme
+package com.artemissoftware.pantracklist.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

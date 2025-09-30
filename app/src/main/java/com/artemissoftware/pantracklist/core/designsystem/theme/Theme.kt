@@ -1,6 +1,5 @@
-package com.artemissoftware.pantracklist.ui.theme
+package com.artemissoftware.pantracklist.core.designsystem.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
