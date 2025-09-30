@@ -1,5 +1,6 @@
 package com.artemissoftware.pantracklist.data.database.dao
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -21,4 +22,11 @@ interface AlbumDao {
         deleteAll()
         insert(albums)
     }
+
+    @Query("SELECT * FROM album")
+    fun pagingSource(): PagingSource<Int, AlbumEntity>
+
+
+    @Query("SELECT COUNT(*) FROM album")
+    suspend fun getCount(): Int
 }

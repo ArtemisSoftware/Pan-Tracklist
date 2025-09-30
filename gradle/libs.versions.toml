@@ -15,7 +15,7 @@ room = "2.4.3"
 com-google-devtools-ksp = "2.0.21-1.0.25"
 okhttp = "5.0.0-alpha.11"
 coil = "3.0.4"
-
+paging = "3.3.6"
 #test
 
 junit-jupiter = "5.9.3"
@@ -61,6 +61,13 @@ room-paging = { group = "androidx.room", name = "room-paging", version.ref = "ro
 
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
+
+# Paging 3
+
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
+paging-runtime-ktx = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
+paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
 
 # Tests
 
