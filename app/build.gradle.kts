@@ -54,7 +54,8 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation(libs.moshi.kotlin)
+
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     annotationProcessor(libs.room.compiler)
