@@ -9,15 +9,18 @@ import androidx.compose.ui.unit.dp
 
 data class Dimension(
     val cardImage: DpSize,
+    val iconSizeBig: DpSize,
 )
 
 val dimensionPortrait = Dimension(
     cardImage = DpSize(width = 120.dp, height = 120.dp),
+    iconSizeBig = DpSize(width = 120.dp, height = 120.dp),
 )
 
 
 val dimensionLandScape = Dimension(
     cardImage = DpSize(width = 60.dp, height = 60.dp),
+    iconSizeBig = DpSize(width = 120.dp, height = 120.dp),
 )
 
 internal val localDimension = staticCompositionLocalOf<Dimension> { throw IllegalStateException("No Dimension installed") }
