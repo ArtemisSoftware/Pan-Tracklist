@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.data.source
+package com.artemissoftware.pantracklist.data.network.source
 
 import assertk.assertFailure
 import assertk.assertThat

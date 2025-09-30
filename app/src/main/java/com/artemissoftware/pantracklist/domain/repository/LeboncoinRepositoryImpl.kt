@@ -8,7 +8,6 @@ import com.artemissoftware.pantracklist.data.database.dao.AlbumDao
 import com.artemissoftware.pantracklist.data.database.entities.AlbumEntity
 import com.artemissoftware.pantracklist.data.mapper.toEntity
 import com.artemissoftware.pantracklist.data.network.source.LeboncoinApiSource
-import com.artemissoftware.pantracklist.domain.models.Album
 
 class LeboncoinRepositoryImpl(
     private val leboncoinApiSource: LeboncoinApiSource,
