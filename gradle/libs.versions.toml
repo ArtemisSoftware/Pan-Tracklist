@@ -14,6 +14,7 @@ moshi-kotlin = "1.12.0"
 room = "2.4.3"
 com-google-devtools-ksp = "2.0.21-1.0.25"
 okhttp = "5.0.0-alpha.11"
+coil = "3.0.4"
 
 #test
 
@@ -43,6 +44,7 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi-kotlin" }
+
 # okhttp
 
 okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
@@ -52,6 +54,11 @@ okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver",
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room"  }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room"  }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"  }
+
+# coil
+
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 
 # Tests
 
