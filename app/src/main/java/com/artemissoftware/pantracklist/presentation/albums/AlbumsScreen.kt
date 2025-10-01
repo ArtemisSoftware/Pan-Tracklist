@@ -9,12 +9,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
 import com.artemissoftware.pantracklist.core.presentation.composables.pagination.PaginationContent
 import com.artemissoftware.pantracklist.core.presentation.composables.scaffold.PTScaffold
+import com.artemissoftware.pantracklist.domain.models.Album
 import com.artemissoftware.pantracklist.presentation.albums.composables.AlbumList
+import kotlinx.coroutines.flow.Flow
 
 @Composable
 internal fun AlbumsScreen(
@@ -24,12 +27,14 @@ internal fun AlbumsScreen(
 
     AlbumsScreenContent(
         state = state,
+        albums = viewModel.albums
     )
 }
 
 @Composable
 private fun AlbumsScreenContent(
     state: AlbumsState,
+    albums: Flow<PagingData<Album>>,
 ) {
 
     val lazyListState = rememberLazyListState()
@@ -39,7 +44,7 @@ private fun AlbumsScreenContent(
         error = state.error,
         content = {
 
-            state.albums?.let {
+            albums?.let {
 
                 val item = it.collectAsLazyPagingItems()
 
@@ -59,7 +64,7 @@ private fun AlbumsScreenContent(
                             state = lazyListState,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(horizontal = MaterialTheme.spacing.spacing3),
+                                .padding(horizontal = MaterialTheme.spacing.spacing1),
                             entries = entries,
                         )
                     }
@@ -69,12 +74,14 @@ private fun AlbumsScreenContent(
     )
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 private fun AlbumsScreenContentPreview() {
     PanTracklistTheme {
         AlbumsScreenContent(
-            state = AlbumsState(),
+            state = AlbumsState(),,
         )
     }
 }
+*/

@@ -6,6 +6,6 @@ import com.artemissoftware.pantracklist.domain.models.Album
 import kotlinx.coroutines.flow.Flow
 
 interface LeboncoinRepository {
-    suspend fun downloadAlbums(): Resource<Unit>
+    suspend fun downloadAlbums(forceReload: Boolean = false): Resource<Unit>
     fun getAlbums(): Flow<PagingData<Album>>
 }

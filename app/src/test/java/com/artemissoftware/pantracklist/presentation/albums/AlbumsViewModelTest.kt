@@ -47,11 +47,6 @@ class AlbumsViewModelTest {
                 val albums = albumsFlow.collectData()
                 assertThat(albums).hasSize(0)
             }
-
-
-            val loadedll = awaitItem()
-            val albumsFlow = loaded.albums
-
         }
     }
 

@@ -19,7 +19,7 @@ class FakeLeboncoinRepository(): LeboncoinRepository {
 
     var errorLoadingData = false
 
-    override suspend fun downloadAlbums(): Resource<Unit> {
+    override suspend fun downloadAlbums(forceReload: Boolean): Resource<Unit> {
         return if(errorLoadingData){
             Resource.Failure(DataError.Remote.SERVER)
         } else {

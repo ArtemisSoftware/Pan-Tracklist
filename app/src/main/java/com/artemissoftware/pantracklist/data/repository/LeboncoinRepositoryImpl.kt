@@ -1,6 +1,7 @@
 package com.artemissoftware.pantracklist.data.repository
 
 import android.database.sqlite.SQLiteException
+import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -22,7 +23,10 @@ class LeboncoinRepositoryImpl(
     private val leboncoinApiSource: LeboncoinApiSource,
     private val albumDao: AlbumDao
 ): LeboncoinRepository {
-    override suspend fun downloadAlbums(): Resource<Unit> {
+    override suspend fun downloadAlbums(forceReload: Boolean): Resource<Unit> {
+
+        if(albumDao.getCount() > 0 && !forceReload)
+            return Resource.Success(Unit)
 
         val result = getAlbumCatalog()
 
@@ -49,12 +53,16 @@ class LeboncoinRepositoryImpl(
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
-                prefetchDistance = 20,
+                prefetchDistance = 20
             ),
             pagingSourceFactory = { albumDao.getAlbums() },
         ).flow
             .map { value: PagingData<AlbumEntity> ->
-                value.map { it.toAlbum() }
+
+
+                value.map {
+                    Log.d("Paging", "Loaded album: ${it.id}")
+                    it.toAlbum() }
             }
     }
 }

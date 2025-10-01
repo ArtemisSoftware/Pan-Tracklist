@@ -85,7 +85,6 @@ class LeboncoinRepositoryImplTest {
 
         val result = leboncoinRepository.downloadAlbums()
 
-
         assertThat(result)
             .isInstanceOf(Resource.Success::class)
 
@@ -95,6 +94,29 @@ class LeboncoinRepositoryImplTest {
         mockWebServer.enqueueResponse(ERROR_RESPONSE, 400)
 
         val result2 = leboncoinRepository.downloadAlbums()
+
+        assertThat(result2)
+            .isInstanceOf(Resource.Success::class)
+
+        assertThat(albumDao.getCount())
+            .isEqualTo(TestData.albumList.size)
+    }
+
+    @Test
+    fun `downloadAlbums, try to reload again with failure should keep existing list from database`() = runTest {
+        mockWebServer.enqueueResponse(ALBUMS_RESPONSE)
+
+        val result = leboncoinRepository.downloadAlbums()
+
+        assertThat(result)
+            .isInstanceOf(Resource.Success::class)
+
+        assertThat(albumDao.getCount())
+            .isEqualTo(TestData.albumList.size)
+
+        mockWebServer.enqueueResponse(ERROR_RESPONSE, 400)
+
+        val result2 = leboncoinRepository.downloadAlbums(forceReload = true)
 
         assertThat(result2)
             .isInstanceOf(Resource.Failure::class)

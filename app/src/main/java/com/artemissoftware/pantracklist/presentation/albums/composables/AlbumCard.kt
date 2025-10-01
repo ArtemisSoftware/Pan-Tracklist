@@ -52,7 +52,7 @@ internal fun AlbumCard(
             modifier = Modifier
                 .testTag(ALBUM_CARD_CONTENT)
                 .fillMaxWidth()
-                .padding(all = MaterialTheme.spacing.spacing0_5),
+                .padding(all = MaterialTheme.spacing.spacing1_5),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.spacing2)
         ) {
