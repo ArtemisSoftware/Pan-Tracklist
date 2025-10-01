@@ -5,10 +5,10 @@ import retrofit2.http.GET
 
 interface LeboncoinApi {
 
-    @GET("/technical-test.json")
+    @GET("img/shared/technical-test.json")
     suspend fun getAlbums(): List<AlbumDto>
 
     companion object { //TODO: rever isto
-        const val BASE_URL = "https://static.leboncoin.fr/img/shared"
+        const val BASE_URL = "https://static.leboncoin.fr/"
     }
 }

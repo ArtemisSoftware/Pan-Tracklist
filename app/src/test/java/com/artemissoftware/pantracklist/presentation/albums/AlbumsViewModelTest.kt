@@ -2,11 +2,15 @@ package com.artemissoftware.pantracklist.presentation.albums
 
 import app.cash.turbine.test
 import assertk.assertThat
+import assertk.assertions.hasSize
 import assertk.assertions.isFalse
 import assertk.assertions.isNotNull
+import assertk.assertions.isNull
 import assertk.assertions.isTrue
 import com.artemissoftware.pantracklist.util.extensions.MainCoroutineExtension
+import com.artemissoftware.pantracklist.util.extensions.collectData
 import com.artemissoftware.pantracklist.util.fake.FakeLeboncoinRepository
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -34,23 +38,20 @@ class AlbumsViewModelTest {
 
             val loading = awaitItem()
             assertThat(loading.isLoading).isTrue()
-/*
-            item2.albums?.let {
+
+            val loaded = awaitItem()
+            assertThat(loaded.isLoading).isFalse()
+            assertThat(loaded.error).isNull()
+            loaded.albums?.let {
                 val albumsFlow = it.first()
                 val albums = albumsFlow.collectData()
                 assertThat(albums).hasSize(0)
             }
-*/
-            //val loaded = awaitItem()
-            //assertThat(loaded.isLoading).isFalse()
-            //assertThat(loaded.error).isNull()
-/*
-            val albumsFlow = loaded.albums
-            assertThat(albumsFlow).isNotNull()
 
-            val albums = albumsFlow!!.first().collectData()
-            assertThat(albums).hasSize(2)
-            */
+
+            val loadedll = awaitItem()
+            val albumsFlow = loaded.albums
+
         }
     }
 
@@ -71,7 +72,6 @@ class AlbumsViewModelTest {
             val loadedWithError = awaitItem()
             assertThat(loadedWithError.isLoading).isFalse()
             assertThat(loadedWithError.error).isNotNull()
-
         }
     }
 }

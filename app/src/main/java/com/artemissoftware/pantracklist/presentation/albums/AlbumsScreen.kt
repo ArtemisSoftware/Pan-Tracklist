@@ -24,14 +24,12 @@ internal fun AlbumsScreen(
 
     AlbumsScreenContent(
         state = state,
-        onEvent = viewModel::onTriggerEvent
     )
 }
 
 @Composable
 private fun AlbumsScreenContent(
     state: AlbumsState,
-    onEvent: (AlbumsEvent) -> Unit
 ) {
 
     val lazyListState = rememberLazyListState()
@@ -77,7 +75,6 @@ private fun AlbumsScreenContentPreview() {
     PanTracklistTheme {
         AlbumsScreenContent(
             state = AlbumsState(),
-            onEvent = {}
         )
     }
 }
