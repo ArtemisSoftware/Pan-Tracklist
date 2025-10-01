@@ -16,6 +16,8 @@ com-google-devtools-ksp = "2.0.21-1.0.25"
 okhttp = "5.0.0-alpha.11"
 coil = "3.0.4"
 paging = "3.3.6"
+kotlinPlugin = "1.8.10"
+
 #test
 
 junit-jupiter = "5.9.3"
@@ -87,6 +89,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "com-google-devtools-ksp" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlinPlugin"  }
 
 # test
 

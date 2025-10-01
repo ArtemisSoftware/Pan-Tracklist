@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.de.mannodermaus.android.junit5)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
