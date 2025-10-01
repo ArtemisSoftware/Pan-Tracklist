@@ -24,7 +24,7 @@ interface AlbumDao {
     }
 
     @Query("SELECT * FROM album")
-    fun pagingSource(): PagingSource<Int, AlbumEntity>
+    fun getAlbums(): PagingSource<Int, AlbumEntity>
 
 
     @Query("SELECT COUNT(*) FROM album")

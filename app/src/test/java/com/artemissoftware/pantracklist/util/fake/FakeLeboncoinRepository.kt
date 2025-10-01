@@ -7,10 +7,12 @@ import com.artemissoftware.pantracklist.domain.models.Album
 import com.artemissoftware.pantracklist.domain.repository.LeboncoinRepository
 import com.artemissoftware.pantracklist.util.TestData
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 
 class FakeLeboncoinRepository(): LeboncoinRepository {
 
     private var items = emptyList<Album>()
+    private var pages = flowOf(PagingData.from(emptyList<Album>()))
 
     var errorLoadingData = false
 
@@ -19,11 +21,12 @@ class FakeLeboncoinRepository(): LeboncoinRepository {
             Resource.Failure(DataError.Remote.SERVER)
         } else {
             items = TestData.albumList
+            //pages = flowOf(PagingData.from(items))
             Resource.Success(Unit)
         }
     }
 
     override fun getAlbums(): Flow<PagingData<Album>> {
-        TODO("Not yet implemented")
+        return pages
     }
 }

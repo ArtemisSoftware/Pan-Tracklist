@@ -51,7 +51,7 @@ class LeboncoinRepositoryImpl(
                 pageSize = 10,
                 prefetchDistance = 20,
             ),
-            pagingSourceFactory = { albumDao.pagingSource() },
+            pagingSourceFactory = { albumDao.getAlbums() },
         ).flow
             .map { value: PagingData<AlbumEntity> ->
                 value.map { it.toAlbum() }

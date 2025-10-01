@@ -26,7 +26,7 @@ class FakeAlbumDao(): AlbumDao {
         items.value = emptyList()
     }
 
-    override fun pagingSource(): PagingSource<Int, AlbumEntity> {
+    override fun getAlbums(): PagingSource<Int, AlbumEntity> {
         TODO("Not yet implemented")
     }
 
