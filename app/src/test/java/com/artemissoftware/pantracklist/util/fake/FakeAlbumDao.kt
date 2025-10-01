@@ -1,9 +1,11 @@
 package com.artemissoftware.pantracklist.util.fake
 
 import android.database.sqlite.SQLiteException
+import androidx.paging.PagingSource
 import com.artemissoftware.pantracklist.data.database.dao.AlbumDao
 import com.artemissoftware.pantracklist.data.database.entities.AlbumEntity
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.first
 
 class FakeAlbumDao(): AlbumDao {
 
@@ -22,5 +24,13 @@ class FakeAlbumDao(): AlbumDao {
 
     override suspend fun deleteAll() {
         items.value = emptyList()
+    }
+
+    override fun pagingSource(): PagingSource<Int, AlbumEntity> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getCount(): Int {
+        return items.first().size
     }
 }

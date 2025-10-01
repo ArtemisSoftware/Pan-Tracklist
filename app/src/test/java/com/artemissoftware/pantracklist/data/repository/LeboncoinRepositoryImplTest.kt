@@ -10,6 +10,7 @@ import com.artemissoftware.pantracklist.domain.repository.LeboncoinRepositoryImp
 import com.artemissoftware.pantracklist.util.LeboncoinMockWebServer
 import com.artemissoftware.pantracklist.util.ServerData.ALBUMS_RESPONSE
 import com.artemissoftware.pantracklist.util.ServerData.ERROR_RESPONSE
+import com.artemissoftware.pantracklist.util.TestData
 import com.artemissoftware.pantracklist.util.enqueueResponse
 import com.artemissoftware.pantracklist.util.fake.FakeAlbumDao
 import kotlinx.coroutines.test.runTest
@@ -49,6 +50,9 @@ class LeboncoinRepositoryImplTest {
 
         assertThat(result)
             .isInstanceOf(Resource.Success::class)
+
+        assertThat(albumDao.getCount())
+            .isEqualTo(TestData.albumList.size)
     }
 
     @Test
@@ -74,5 +78,29 @@ class LeboncoinRepositoryImplTest {
 
         assertThat((result as Resource.Failure).error)
             .isEqualTo(DataError.Local.DISK_FULL)
+    }
+
+    @Test
+    fun `downloadAlbums, try to load again with failure should keep existing list from database`() = runTest {
+        mockWebServer.enqueueResponse(ALBUMS_RESPONSE)
+
+        val result = leboncoinRepository.downloadAlbums()
+
+
+        assertThat(result)
+            .isInstanceOf(Resource.Success::class)
+
+        assertThat(albumDao.getCount())
+            .isEqualTo(TestData.albumList.size)
+
+        mockWebServer.enqueueResponse(ERROR_RESPONSE, 400)
+
+        val result2 = leboncoinRepository.downloadAlbums()
+
+        assertThat(result2)
+            .isInstanceOf(Resource.Failure::class)
+
+        assertThat(albumDao.getCount())
+            .isEqualTo(TestData.albumList.size)
     }
 }
