@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
     implementation(libs.moshi.kotlin)
+    implementation(libs.okhttp.log.interceptor)
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
