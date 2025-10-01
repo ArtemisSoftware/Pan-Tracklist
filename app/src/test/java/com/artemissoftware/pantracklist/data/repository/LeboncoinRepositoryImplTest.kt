@@ -6,7 +6,7 @@ import assertk.assertions.isInstanceOf
 import com.artemissoftware.pantracklist.core.domain.Resource
 import com.artemissoftware.pantracklist.core.domain.error.DataError
 import com.artemissoftware.pantracklist.data.network.source.LeboncoinApiSource
-import com.artemissoftware.pantracklist.domain.repository.LeboncoinRepositoryImpl
+import com.artemissoftware.pantracklist.data.repository.LeboncoinRepositoryImpl
 import com.artemissoftware.pantracklist.util.LeboncoinMockWebServer
 import com.artemissoftware.pantracklist.util.ServerData.ALBUMS_RESPONSE
 import com.artemissoftware.pantracklist.util.ServerData.ERROR_RESPONSE

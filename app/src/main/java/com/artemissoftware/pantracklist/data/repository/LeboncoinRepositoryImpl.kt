@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.domain.repository
+package com.artemissoftware.pantracklist.data.repository
 
 import android.database.sqlite.SQLiteException
 import androidx.paging.Pager
@@ -14,6 +14,7 @@ import com.artemissoftware.pantracklist.data.mapper.toAlbum
 import com.artemissoftware.pantracklist.data.mapper.toEntity
 import com.artemissoftware.pantracklist.data.network.source.LeboncoinApiSource
 import com.artemissoftware.pantracklist.domain.models.Album
+import com.artemissoftware.pantracklist.domain.repository.LeboncoinRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

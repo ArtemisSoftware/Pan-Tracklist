@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
@@ -25,6 +26,10 @@ import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistThem
 import com.artemissoftware.pantracklist.core.designsystem.theme.dimension
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
 import com.artemissoftware.pantracklist.domain.models.Album
+import com.artemissoftware.pantracklist.presentation.util.TestTags.ALBUM_CARD_CONTENT
+import com.artemissoftware.pantracklist.presentation.util.TestTags.ALBUM_CARD_IMAGE
+import com.artemissoftware.pantracklist.presentation.util.TestTags.ALBUM_CARD_NAME
+import com.artemissoftware.pantracklist.presentation.util.TestTags.getAlbumCardTag
 
 @Composable
 internal fun AlbumCard(
@@ -41,9 +46,11 @@ internal fun AlbumCard(
 
     Card(
         modifier = modifier
+            .testTag(getAlbumCardTag(album.id.toString()))
     ) {
         Row(
             modifier = Modifier
+                .testTag(ALBUM_CARD_CONTENT)
                 .fillMaxWidth()
                 .padding(all = MaterialTheme.spacing.spacing0_5),
             verticalAlignment = Alignment.CenterVertically,
@@ -51,6 +58,7 @@ internal fun AlbumCard(
         ) {
             AsyncImage(
                 modifier = Modifier
+                    .testTag(ALBUM_CARD_IMAGE)
                     .size(MaterialTheme.dimension.cardImage),
                 model = request
                     .build(),
@@ -62,6 +70,8 @@ internal fun AlbumCard(
                 text = album.title,
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .testTag(ALBUM_CARD_NAME)
             )
         }
     }
