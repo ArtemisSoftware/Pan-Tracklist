@@ -17,6 +17,8 @@ okhttp = "5.0.0-alpha.11"
 coil = "3.0.4"
 paging = "3.3.6"
 kotlinPlugin = "1.8.10"
+hilt = "2.49"
+hilt-navigation-compose = "1.2.0"
 
 #test
 
@@ -71,6 +73,12 @@ paging-runtime-ktx = { group = "androidx.paging", name = "paging-runtime-ktx", v
 paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
 
+# hilt
+
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+
 # Tests
 
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit-jupiter" }
@@ -90,6 +98,7 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "com-google-devtools-ksp" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlinPlugin"  }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 # test
 

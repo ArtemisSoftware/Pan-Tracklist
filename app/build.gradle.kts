@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.de.mannodermaus.android.junit5)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -70,6 +71,10 @@ dependencies {
     implementation(libs.paging.runtime)
     implementation(libs.paging.common)
     implementation(libs.paging.runtime.ktx)
+
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    ksp(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter.api)
