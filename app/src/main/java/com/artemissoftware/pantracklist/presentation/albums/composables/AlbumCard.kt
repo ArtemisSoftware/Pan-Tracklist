@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.presentation.composables
+package com.artemissoftware.pantracklist.presentation.albums.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
