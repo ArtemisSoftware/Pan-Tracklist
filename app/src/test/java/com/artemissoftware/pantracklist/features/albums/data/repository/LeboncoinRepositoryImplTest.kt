@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.data.repository
+package com.artemissoftware.pantracklist.features.albums.data.repository
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
@@ -6,12 +6,11 @@ import assertk.assertions.isInstanceOf
 import com.artemissoftware.pantracklist.core.domain.Resource
 import com.artemissoftware.pantracklist.core.domain.error.DataError
 import com.artemissoftware.pantracklist.features.albums.data.network.source.LeboncoinApiSource
-import com.artemissoftware.pantracklist.features.albums.data.repository.LeboncoinRepositoryImpl
-import com.artemissoftware.pantracklist.util.LeboncoinMockWebServer
-import com.artemissoftware.pantracklist.util.ServerData.ALBUMS_RESPONSE
-import com.artemissoftware.pantracklist.util.ServerData.ERROR_RESPONSE
+import com.artemissoftware.pantracklist.util.server.LeboncoinMockWebServer
+import com.artemissoftware.pantracklist.util.server.ServerData.ALBUMS_RESPONSE
+import com.artemissoftware.pantracklist.util.server.ServerData.ERROR_RESPONSE
 import com.artemissoftware.pantracklist.util.TestData
-import com.artemissoftware.pantracklist.util.enqueueResponse
+import com.artemissoftware.pantracklist.util.server.enqueueResponse
 import com.artemissoftware.pantracklist.util.fake.FakeAlbumDao
 import kotlinx.coroutines.test.runTest
 import okhttp3.mockwebserver.MockWebServer

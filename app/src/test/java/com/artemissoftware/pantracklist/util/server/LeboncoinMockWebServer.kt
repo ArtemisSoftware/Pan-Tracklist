@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.util
+package com.artemissoftware.pantracklist.util.server
 
 import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinApi
 import com.squareup.moshi.Moshi

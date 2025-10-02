@@ -1,16 +1,15 @@
-package com.artemissoftware.pantracklist.data.network.source
+package com.artemissoftware.pantracklist.features.albums.data.network.source
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isInstanceOf
 import com.artemissoftware.pantracklist.core.domain.Resource
 import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinApi
-import com.artemissoftware.pantracklist.features.albums.data.network.source.LeboncoinApiSource
-import com.artemissoftware.pantracklist.util.ServerData.ALBUMS_RESPONSE
-import com.artemissoftware.pantracklist.util.ServerData.ERROR_ALBUMS_WITH_MISSING_FIELDS_RESPONSE
-import com.artemissoftware.pantracklist.util.ServerData.ERROR_RESPONSE
+import com.artemissoftware.pantracklist.util.server.ServerData.ALBUMS_RESPONSE
+import com.artemissoftware.pantracklist.util.server.ServerData.ERROR_ALBUMS_WITH_MISSING_FIELDS_RESPONSE
+import com.artemissoftware.pantracklist.util.server.ServerData.ERROR_RESPONSE
 import com.artemissoftware.pantracklist.util.TestData.albumListDto
-import com.artemissoftware.pantracklist.util.enqueueResponse
+import com.artemissoftware.pantracklist.util.server.enqueueResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.test.runTest

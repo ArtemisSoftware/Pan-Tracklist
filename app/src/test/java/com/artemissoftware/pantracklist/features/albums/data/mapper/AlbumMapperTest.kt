@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.data.mapper
+package com.artemissoftware.pantracklist.features.albums.data.mapper
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo

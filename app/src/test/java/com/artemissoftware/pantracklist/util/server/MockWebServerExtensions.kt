@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.util
+package com.artemissoftware.pantracklist.util.server
 
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

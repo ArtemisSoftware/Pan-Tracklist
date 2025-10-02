@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.util
+package com.artemissoftware.pantracklist.util.server
 
 object ServerData {
     const val ALBUMS_RESPONSE = "albums.json"

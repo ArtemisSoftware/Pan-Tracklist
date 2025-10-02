@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.presentation.albums
+package com.artemissoftware.pantracklist.features.albums.presentation.albums
 
 import app.cash.turbine.test
 import assertk.assertThat
