@@ -2,15 +2,12 @@ package com.artemissoftware.pantracklist.presentation.albums
 
 import app.cash.turbine.test
 import assertk.assertThat
-import assertk.assertions.hasSize
 import assertk.assertions.isFalse
 import assertk.assertions.isNotNull
 import assertk.assertions.isNull
 import assertk.assertions.isTrue
 import com.artemissoftware.pantracklist.util.extensions.MainCoroutineExtension
-import com.artemissoftware.pantracklist.util.extensions.collectData
 import com.artemissoftware.pantracklist.util.fake.FakeLeboncoinRepository
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -35,6 +32,7 @@ class AlbumsViewModelTest {
 
             val initial = awaitItem()
             assertThat(initial.isLoading).isFalse()
+            assertThat(initial.albums).isNull()
 
             val loading = awaitItem()
             assertThat(loading.isLoading).isTrue()
@@ -42,14 +40,9 @@ class AlbumsViewModelTest {
             val loaded = awaitItem()
             assertThat(loaded.isLoading).isFalse()
             assertThat(loaded.error).isNull()
-            loaded.albums?.let {
-                val albumsFlow = it.first()
-                val albums = albumsFlow.collectData()
-                assertThat(albums).hasSize(0)
-            }
+            assertThat(loaded.albums).isNotNull()
         }
     }
-
 
     @Test
     fun `Download all albums return error`() = runTest {

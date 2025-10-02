@@ -9,15 +9,16 @@ import com.artemissoftware.pantracklist.util.TestData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.flowOf
 
 class FakeLeboncoinRepository(): LeboncoinRepository {
 
     private var items = emptyList<Album>()
-    private var _pages = MutableStateFlow(PagingData.from(emptyList<Album>()))
+    private var _pages = MutableStateFlow<PagingData<Album>>(PagingData.empty())
+
     private var pages = _pages.asStateFlow()
 
     var errorLoadingData = false
+
 
     override suspend fun downloadAlbums(forceReload: Boolean): Resource<Unit> {
         return if(errorLoadingData){
@@ -30,6 +31,6 @@ class FakeLeboncoinRepository(): LeboncoinRepository {
     }
 
     override fun getAlbums(): Flow<PagingData<Album>> {
-        return flowOf(PagingData.from(items))
+        return pages
     }
 }

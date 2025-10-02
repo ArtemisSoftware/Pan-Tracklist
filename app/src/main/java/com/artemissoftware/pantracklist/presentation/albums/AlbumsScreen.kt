@@ -1,9 +1,13 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.artemissoftware.pantracklist.presentation.albums
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,14 +31,14 @@ internal fun AlbumsScreen(
 
     AlbumsScreenContent(
         state = state,
-        albums = viewModel.albums
+        onEvent = viewModel::onTriggerEvent
     )
 }
 
 @Composable
 private fun AlbumsScreenContent(
     state: AlbumsState,
-    albums: Flow<PagingData<Album>>,
+    onEvent: (AlbumsEvent) -> Unit
 ) {
 
     val lazyListState = rememberLazyListState()
@@ -43,8 +47,12 @@ private fun AlbumsScreenContent(
         isLoading = state.isLoading,
         error = state.error,
         content = {
-
-            albums?.let {
+            PullToRefreshBox(
+                isRefreshing = state.isRefreshing,
+                onRefresh = { onEvent(AlbumsEvent.Refresh) },
+                modifier = Modifier
+            ) {
+                state.albums?.let {
 
                 val item = it.collectAsLazyPagingItems()
 
@@ -70,18 +78,7 @@ private fun AlbumsScreenContent(
                     }
                 )
             }
+            }
         }
     )
 }
-
-/*
-@Preview(showBackground = true)
-@Composable
-private fun AlbumsScreenContentPreview() {
-    PanTracklistTheme {
-        AlbumsScreenContent(
-            state = AlbumsState(),,
-        )
-    }
-}
-*/

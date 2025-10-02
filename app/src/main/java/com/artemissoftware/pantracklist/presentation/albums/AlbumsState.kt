@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 internal data class AlbumsState(
     val isLoading: Boolean = false,
+    val isRefreshing: Boolean = false,
     val albums: Flow<PagingData<Album>>? = null,
     val error: ErrorData? = null
 )

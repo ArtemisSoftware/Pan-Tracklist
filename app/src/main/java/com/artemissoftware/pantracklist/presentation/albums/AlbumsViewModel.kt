@@ -2,16 +2,13 @@ package com.artemissoftware.pantracklist.presentation.albums
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.artemissoftware.pantracklist.R
 import com.artemissoftware.pantracklist.core.presentation.composables.text.UiText
 import com.artemissoftware.pantracklist.core.presentation.models.ErrorData
 import com.artemissoftware.pantracklist.core.presentation.util.extensions.toUiText
-import com.artemissoftware.pantracklist.domain.models.Album
 import com.artemissoftware.pantracklist.domain.repository.LeboncoinRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
@@ -32,9 +29,8 @@ internal class AlbumsViewModel @Inject constructor(
     val state = _state.asStateFlow()
         .onStart {
             if (!hasLoadedInitialData) {
-                //getAlbums()
+                getAlbums()
                 loadAlbums()
-                //
                 hasLoadedInitialData = true
             }
         }
@@ -44,32 +40,29 @@ internal class AlbumsViewModel @Inject constructor(
             initialValue = AlbumsState()
         )
 
-    val albums: Flow<PagingData<Album>> = leboncoinRepository
-        .getAlbums()
-        .cachedIn(viewModelScope)
-
     fun onTriggerEvent(event: AlbumsEvent){
         when(event){
             AlbumsEvent.ReLoadAlbums -> loadAlbums(forceReload = true)
+            AlbumsEvent.Refresh -> refreshAlbums()
         }
     }
 
     private fun loadAlbums(forceReload: Boolean = false) = with(_state){
-        update {
-            it.copy(isLoading = true, error = null)
-        }
+
+        update { it.copy(isLoading = !value.isRefreshing, error = null) }
 
         viewModelScope.launch {
             leboncoinRepository.downloadAlbums(forceReload)
                 .onSuccess {
                     update {
-                        it.copy(isLoading = false, error = null)
+                        it.copy(isLoading = false, error = null, isRefreshing = false)
                     }
                 }
                 .onFailure { error ->
                     update {
                         it.copy(
                             isLoading = false,
+                            isRefreshing = false,
                             error = ErrorData(
                                 message = error.toUiText(),
                                 buttonText = UiText.StringResource(R.string.try_again),
@@ -81,6 +74,11 @@ internal class AlbumsViewModel @Inject constructor(
                     }
                 }
         }
+    }
+
+    private fun refreshAlbums() = with(_state){
+        update { it.copy(isRefreshing = true) }
+        loadAlbums(forceReload = true)
     }
 
     private fun getAlbums() = with(_state) {
