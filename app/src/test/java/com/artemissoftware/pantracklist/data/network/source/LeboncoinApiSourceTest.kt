@@ -1,11 +1,11 @@
 package com.artemissoftware.pantracklist.data.network.source
 
-import assertk.assertFailure
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import assertk.assertions.isInstanceOf
 import com.artemissoftware.pantracklist.core.domain.Resource
-import com.artemissoftware.pantracklist.data.network.LeboncoinApi
-import com.artemissoftware.pantracklist.data.network.source.LeboncoinApiSource
+import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinApi
+import com.artemissoftware.pantracklist.features.albums.data.network.source.LeboncoinApiSource
 import com.artemissoftware.pantracklist.util.ServerData.ALBUMS_RESPONSE
 import com.artemissoftware.pantracklist.util.ServerData.ERROR_ALBUMS_WITH_MISSING_FIELDS_RESPONSE
 import com.artemissoftware.pantracklist.util.ServerData.ERROR_RESPONSE
@@ -13,7 +13,6 @@ import com.artemissoftware.pantracklist.util.TestData.albumListDto
 import com.artemissoftware.pantracklist.util.enqueueResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
@@ -58,6 +57,9 @@ class LeboncoinApiSourceTest {
         val result = leboncoinApiSource.getAlbums()
 
         assertThat(result)
+            .isInstanceOf(Resource.Success::class)
+
+        assertThat((result as Resource.Success).data)
             .isEqualTo(albumListDto)
     }
 
@@ -65,17 +67,19 @@ class LeboncoinApiSourceTest {
     fun `Get albums, return error`() = runTest {
         mockWebServer.enqueueResponse(ERROR_RESPONSE, 400)
 
-        assertFailure {
-            leboncoinApiSource.getAlbums()
-        }
+        val result = leboncoinApiSource.getAlbums()
+
+        assertThat(result)
+            .isInstanceOf(Resource.Failure::class)
     }
 
     @Test
-    fun `Get albums, api responds with incomplete json, return error`() = runTest { //TODO: meter tudo como nullable e rever o tratamento desta exepcao
+    fun `Get albums, api responds with incomplete json, return error`() = runTest {
         mockWebServer.enqueueResponse(ERROR_ALBUMS_WITH_MISSING_FIELDS_RESPONSE, 200)
 
-        assertFailure {
-            leboncoinApiSource.getAlbums()
-        }
+        val result = leboncoinApiSource.getAlbums()
+
+        assertThat(result)
+            .isInstanceOf(Resource.Failure::class)
     }
 }

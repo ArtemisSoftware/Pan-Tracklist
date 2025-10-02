@@ -1,6 +1,6 @@
 package com.artemissoftware.pantracklist.util
 
-import com.artemissoftware.pantracklist.domain.models.Album
+import com.artemissoftware.pantracklist.features.albums.domain.models.Album
 
 object TestInstrumentedData {
 

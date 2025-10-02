@@ -6,6 +6,7 @@ import assertk.assertions.isFalse
 import assertk.assertions.isNotNull
 import assertk.assertions.isNull
 import assertk.assertions.isTrue
+import com.artemissoftware.pantracklist.features.albums.presentation.albums.AlbumsViewModel
 import com.artemissoftware.pantracklist.util.extensions.MainCoroutineExtension
 import com.artemissoftware.pantracklist.util.fake.FakeLeboncoinRepository
 import kotlinx.coroutines.test.runTest

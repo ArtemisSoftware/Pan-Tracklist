@@ -2,8 +2,8 @@ package com.artemissoftware.pantracklist.util.fake
 
 import android.database.sqlite.SQLiteException
 import androidx.paging.PagingSource
-import com.artemissoftware.pantracklist.data.database.dao.AlbumDao
-import com.artemissoftware.pantracklist.data.database.entities.AlbumEntity
+import com.artemissoftware.pantracklist.core.database.dao.AlbumDao
+import com.artemissoftware.pantracklist.core.database.entities.AlbumEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 

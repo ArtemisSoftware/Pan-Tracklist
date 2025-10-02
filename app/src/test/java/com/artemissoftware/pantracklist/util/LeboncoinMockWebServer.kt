@@ -1,6 +1,6 @@
 package com.artemissoftware.pantracklist.util
 
-import com.artemissoftware.pantracklist.data.network.LeboncoinApi
+import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

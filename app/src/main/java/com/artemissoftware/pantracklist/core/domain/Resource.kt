@@ -16,3 +16,10 @@ sealed interface Resource<T> {
         return this
     }
 }
+
+inline fun <T, R> Resource<T>.map(map: (T) -> R): Resource<R> {
+    return when (this) {
+        is Resource.Success -> Resource.Success(map(data))
+        is Resource.Failure -> Resource.Failure(error)
+    }
+}
