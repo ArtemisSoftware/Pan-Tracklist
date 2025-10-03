@@ -1,8 +1,8 @@
-package com.artemissoftware.pantracklist.util
+package com.artemissoftware.pantracklist.albums.data
 
+import com.artemissoftware.pantracklist.album.domain.models.Album
+import com.artemissoftware.pantracklist.albums.data.network.dto.AlbumDto
 import com.artemissoftware.pantracklist.database.entities.AlbumEntity
-import com.artemissoftware.pantracklist.features.albums.data.network.dto.AlbumDto
-import com.artemissoftware.pantracklist.features.albums.domain.models.Album
 
 object TestData {
 

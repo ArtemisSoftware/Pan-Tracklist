@@ -9,7 +9,7 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import kotlin.coroutines.cancellation.CancellationException
 
-internal object HandleApi {
+object HandleApi {
 
     suspend fun <T> safeApiCall(callFunction: suspend () -> T): Resource<T> {
         return try {

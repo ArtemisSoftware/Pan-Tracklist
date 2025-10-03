@@ -55,6 +55,9 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:network"))
 
+    implementation(project(":features:albums:data"))
+    implementation(project(":features:albums:domain"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
