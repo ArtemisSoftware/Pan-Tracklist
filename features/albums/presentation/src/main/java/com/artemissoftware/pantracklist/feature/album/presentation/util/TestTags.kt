@@ -1,6 +1,6 @@
 package com.artemissoftware.pantracklist.feature.album.presentation.util
 
-internal object TestTags {
+object TestTags {
 
     private const val ALBUM = "album_"
     private const val ALBUM_CARD = ALBUM + "card"

@@ -2,7 +2,7 @@ package com.artemissoftware.pantracklist.features.albums.presentation
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
-import com.artemissoftware.pantracklist.features.albums.presentation.albums.AlbumsScreen
+import com.artemissoftware.pantracklist.feature.album.presentation.albums.navigation.AlbumsGraph
 import com.artemissoftware.pantracklist.test.TestActivity
 import com.artemissoftware.pantracklist.util.PanTracklistAndroidTest
 import com.artemissoftware.pantracklist.util.mockserver.dispatcher.MockServerDispatcher
@@ -31,7 +31,7 @@ class AlbumsScreenTest: PanTracklistAndroidTest() {
 
         composeRule.setContent {
             PanTracklistTheme {
-                AlbumsScreen()
+                AlbumsGraph()
             }
         }
 
@@ -48,7 +48,7 @@ class AlbumsScreenTest: PanTracklistAndroidTest() {
 
         composeRule.setContent {
             PanTracklistTheme {
-                AlbumsScreen()
+                AlbumsGraph()
             }
         }
 
@@ -65,7 +65,7 @@ class AlbumsScreenTest: PanTracklistAndroidTest() {
 
         composeRule.setContent {
             PanTracklistTheme {
-                AlbumsScreen()
+                AlbumsGraph()
             }
         }
 

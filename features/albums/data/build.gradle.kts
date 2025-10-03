@@ -10,8 +10,13 @@ android {
     namespace = "com.artemissoftware.pantracklist.albums.data"
     compileSdk = 36
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         minSdk = 31
+        buildConfigField("String", "BASE_URL", "\"https://static.leboncoin.fr/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
