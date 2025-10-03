@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -17,6 +18,7 @@ import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
 import com.artemissoftware.pantracklist.core.presentation.composables.pagination.PaginationContent
 import com.artemissoftware.pantracklist.core.presentation.composables.scaffold.PTScaffold
 import com.artemissoftware.pantracklist.features.albums.presentation.albums.composables.AlbumList
+import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_LIST
 
 @Composable
 internal fun AlbumsScreen(
@@ -53,19 +55,11 @@ private fun AlbumsScreenContent(
 
                 PaginationContent(
                     items = item,
-                    loadingContent = {
-                        /*
-                        ShimmerCatalogGrid(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = MaterialTheme.spacing.spacing3)
-                        )
-                        */
-                    },
                     content = { entries ->
                         AlbumList(
                             state = lazyListState,
                             modifier = Modifier
+                                .testTag(ALBUM_LIST)
                                 .fillMaxWidth()
                                 .padding(horizontal = MaterialTheme.spacing.spacing1),
                             entries = entries,

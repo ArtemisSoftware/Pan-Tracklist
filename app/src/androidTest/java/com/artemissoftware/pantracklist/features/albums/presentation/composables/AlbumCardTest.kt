@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.presentation.composables
+package com.artemissoftware.pantracklist.features.albums.presentation.composables
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.assertIsDisplayed
