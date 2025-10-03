@@ -7,9 +7,8 @@ import androidx.paging.compose.LazyPagingItems
 @Composable
 fun <T : Any>PaginationContent(
     items: LazyPagingItems<T>,
-    loadingContent: @Composable () -> Unit,
-    //errorContent: @Composable (UiText) -> Unit = {},
-    content: @Composable (LazyPagingItems<T>/*, UiText?*/) -> Unit,
+    content: @Composable (LazyPagingItems<T>) -> Unit,
+    loadingContent: @Composable () -> Unit = {}
 ) {
     items.apply {
         val error = when {
@@ -24,37 +23,14 @@ fun <T : Any>PaginationContent(
             }
 
             error != null && this.itemCount > 0 -> {
-                content(items/*, parseErrorMessage(error)*/)
+                content(items)
             }
 
-            error != null -> {
-                //errorContent(parseErrorMessage(error))
-            }
+            error != null -> Unit
 
             else -> {
-                content(items/*, null*/)
+                content(items)
             }
         }
     }
 }
-
-/*
-private fun parseErrorMessage(pagingError: LoadState.Error?): UiText {
-    pagingError?.let {
-        return when (val error = it.error) {
-            is PaginationException -> {
-                error.error.toUiText()
-            }
-            else -> {
-                error.message?.let { message ->
-                    UiText.DynamicString(message)
-                } ?: run {
-                    UiText.StringResource(R.string.unknown_error)
-                }
-            }
-        }
-    }
-
-    return UiText.StringResource(R.string.unknown_error)
-}
-*/

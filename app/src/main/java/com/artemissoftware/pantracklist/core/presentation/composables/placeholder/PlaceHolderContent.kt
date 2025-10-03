@@ -20,12 +20,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.artemissoftware.pantracklist.R
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
 import com.artemissoftware.pantracklist.core.designsystem.theme.dimension
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
+import com.artemissoftware.pantracklist.core.presentation.util.test.CoreTestTags
+import com.artemissoftware.pantracklist.core.presentation.util.test.CoreTestTags.CORE_PLACEHOLDER_CONTENT
 
 @Composable
 fun PlaceHolderContent(
@@ -50,6 +53,7 @@ fun PlaceHolderContent(
 
     Column(
         modifier = Modifier
+            .testTag(CORE_PLACEHOLDER_CONTENT)
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -69,7 +73,11 @@ fun PlaceHolderContent(
             style = MaterialTheme.typography.bodyMedium,
         )
         onClick?.let {
-            Button(onClick = it) {
+            Button(
+                modifier = Modifier
+                    .testTag(CoreTestTags.CORE_PLACEHOLDER_BUTTON),
+                onClick = it
+            ) {
                 Text(text = buttonText)
             }
         }
