@@ -13,8 +13,13 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/database" />
+            <option value="$PROJECT_DIR$/core/designsystem" />
             <option value="$PROJECT_DIR$/core/domain" />
             <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/albums" />
+            <option value="$PROJECT_DIR$/features/albums/data" />
+            <option value="$PROJECT_DIR$/features/albums/domain" />
           </set>
         </option>
       </GradleProjectSettings>

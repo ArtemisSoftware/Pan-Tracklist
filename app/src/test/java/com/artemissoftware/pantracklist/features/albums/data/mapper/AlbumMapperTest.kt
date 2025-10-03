@@ -4,9 +4,6 @@ import assertk.assertThat
 import assertk.assertions.isEqualTo
 import com.artemissoftware.pantracklist.features.albums.data.mapper.toAlbum
 import com.artemissoftware.pantracklist.features.albums.data.mapper.toEntity
-import com.artemissoftware.pantracklist.util.TestData.albumList
-import com.artemissoftware.pantracklist.util.TestData.albumListDto
-import com.artemissoftware.pantracklist.util.TestData.albumListEntities
 import org.junit.jupiter.api.Test
 
 class AlbumMapperTest {

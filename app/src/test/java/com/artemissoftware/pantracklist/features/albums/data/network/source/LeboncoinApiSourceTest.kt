@@ -8,7 +8,6 @@ import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinAp
 import com.artemissoftware.pantracklist.util.server.ServerData.ALBUMS_RESPONSE
 import com.artemissoftware.pantracklist.util.server.ServerData.ERROR_ALBUMS_WITH_MISSING_FIELDS_RESPONSE
 import com.artemissoftware.pantracklist.util.server.ServerData.ERROR_RESPONSE
-import com.artemissoftware.pantracklist.util.TestData.albumListDto
 import com.artemissoftware.pantracklist.util.server.enqueueResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
