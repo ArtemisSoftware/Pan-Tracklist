@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.composables
+package com.artemissoftware.pantracklist.feature.album.presentation.composables
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.assertIsDisplayed
@@ -8,11 +8,11 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.printToLog
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
-import com.artemissoftware.pantracklist.features.albums.presentation.albums.composables.AlbumCard
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_CONTENT
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_IMAGE
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_NAME
-import com.artemissoftware.pantracklist.util.TestInstrumentedData
+import com.artemissoftware.pantracklist.feature.album.presentation.TestInstrumentedData
+import com.artemissoftware.pantracklist.feature.album.presentation.albums.composables.AlbumCard
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_CONTENT
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_IMAGE
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_NAME
 import org.junit.Rule
 import org.junit.Test
 

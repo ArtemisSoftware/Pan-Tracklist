@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.util
+package com.artemissoftware.pantracklist.feature.album.presentation.util
 
 internal object TestTags {
 

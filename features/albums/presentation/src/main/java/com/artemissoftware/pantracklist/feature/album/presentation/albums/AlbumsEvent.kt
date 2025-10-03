@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.albums
+package com.artemissoftware.pantracklist.feature.album.presentation.albums
 
 internal sealed interface AlbumsEvent {
     data object ReLoadAlbums: AlbumsEvent

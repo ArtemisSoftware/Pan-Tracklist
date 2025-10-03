@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.albums.composables
+package com.artemissoftware.pantracklist.feature.album.presentation.albums.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -23,16 +23,15 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.request.error
 import coil3.request.placeholder
-import com.artemissoftware.pantracklist.R
+import com.artemissoftware.pantracklist.album.domain.models.Album
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
 import com.artemissoftware.pantracklist.core.designsystem.theme.dimension
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
-import com.artemissoftware.pantracklist.features.albums.domain.models.Album
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_CONTENT
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_IMAGE
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_NAME
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.getAlbumCardTag
-import okhttp3.Headers
+import com.artemissoftware.pantracklist.core.presentation.R
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_CONTENT
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_IMAGE
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_CARD_NAME
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.getAlbumCardTag
 
 @Composable
 internal fun AlbumCard(

@@ -1,13 +1,13 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.albums
+package com.artemissoftware.pantracklist.feature.album.presentation.albums
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.artemissoftware.pantracklist.R
+import com.artemissoftware.pantracklist.album.domain.repository.LeboncoinRepository
+import com.artemissoftware.pantracklist.core.presentation.R
 import com.artemissoftware.pantracklist.core.presentation.composables.text.UiText
 import com.artemissoftware.pantracklist.core.presentation.models.ErrorData
 import com.artemissoftware.pantracklist.core.presentation.util.extensions.toUiText
-import com.artemissoftware.pantracklist.features.albums.domain.repository.LeboncoinRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

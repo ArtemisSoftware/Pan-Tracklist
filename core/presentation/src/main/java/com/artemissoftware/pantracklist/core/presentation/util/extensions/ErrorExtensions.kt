@@ -3,6 +3,7 @@ package com.artemissoftware.pantracklist.core.presentation.util.extensions
 import com.artemissoftware.pantracklist.core.presentation.R
 import com.artemissoftware.pantracklist.core.presentation.composables.text.UiText
 import com.artemissoftware.pantracklist.domain.error.DataError
+import com.artemissoftware.pantracklist.domain.error.Error
 
 fun Error.toUiText(): UiText {
     return when (this) {

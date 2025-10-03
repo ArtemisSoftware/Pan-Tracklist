@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.artemissoftware.pantracklist.features.albums.presentation.albums
+package com.artemissoftware.pantracklist.feature.album.presentation.albums
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,8 +17,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
 import com.artemissoftware.pantracklist.core.presentation.composables.pagination.PaginationContent
 import com.artemissoftware.pantracklist.core.presentation.composables.scaffold.PTScaffold
-import com.artemissoftware.pantracklist.features.albums.presentation.albums.composables.AlbumList
-import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_LIST
+import com.artemissoftware.pantracklist.feature.album.presentation.albums.composables.AlbumList
+import com.artemissoftware.pantracklist.feature.album.presentation.util.TestTags.ALBUM_LIST
 
 @Composable
 internal fun AlbumsScreen(

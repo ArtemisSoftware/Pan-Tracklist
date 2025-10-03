@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.albums.composables
+package com.artemissoftware.pantracklist.feature.album.presentation.albums.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
+import com.artemissoftware.pantracklist.album.domain.models.Album
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
-import com.artemissoftware.pantracklist.features.albums.domain.models.Album
 
 @Composable
 internal fun AlbumList(

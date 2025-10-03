@@ -1,8 +1,8 @@
-package com.artemissoftware.pantracklist.features.albums.presentation.albums
+package com.artemissoftware.pantracklist.feature.album.presentation.albums
 
 import androidx.paging.PagingData
+import com.artemissoftware.pantracklist.album.domain.models.Album
 import com.artemissoftware.pantracklist.core.presentation.models.ErrorData
-import com.artemissoftware.pantracklist.features.albums.domain.models.Album
 import kotlinx.coroutines.flow.Flow
 
 internal data class AlbumsState(
