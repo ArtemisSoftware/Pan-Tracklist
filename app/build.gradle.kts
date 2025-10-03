@@ -12,12 +12,18 @@ android {
     namespace = "com.artemissoftware.pantracklist"
     compileSdk = 36
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.artemissoftware.pantracklist"
         minSdk = 31
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField("String", "BASE_URL", "\"https://static.leboncoin.fr/\"")
 
         testInstrumentationRunner = "com.artemissoftware.pantracklist.HiltTestRunner"
     }

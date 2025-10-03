@@ -7,8 +7,4 @@ interface LeboncoinApi {
 
     @GET("img/shared/technical-test.json")
     suspend fun getAlbums(): List<AlbumDto>
-
-    companion object { //TODO: rever isto
-        const val BASE_URL = "https://static.leboncoin.fr/"
-    }
 }

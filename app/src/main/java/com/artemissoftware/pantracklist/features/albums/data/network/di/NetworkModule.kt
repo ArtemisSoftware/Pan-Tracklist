@@ -1,5 +1,6 @@
 package com.artemissoftware.pantracklist.features.albums.data.network.di
 
+import com.artemissoftware.pantracklist.BuildConfig
 import com.artemissoftware.pantracklist.features.albums.data.network.LeboncoinApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -18,7 +19,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 open class NetworkModule {
 
-    protected open fun baseUrl() = LeboncoinApi.BASE_URL
+    protected open fun baseUrl() = BuildConfig.BASE_URL
 
     @Provides
     @Singleton
