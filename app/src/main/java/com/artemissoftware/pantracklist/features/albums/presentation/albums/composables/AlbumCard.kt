@@ -17,6 +17,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
+import coil3.network.NetworkHeaders
+import coil3.network.httpHeaders
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.request.error
@@ -30,16 +32,21 @@ import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTa
 import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_IMAGE
 import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.ALBUM_CARD_NAME
 import com.artemissoftware.pantracklist.features.albums.presentation.util.TestTags.getAlbumCardTag
+import okhttp3.Headers
 
 @Composable
 internal fun AlbumCard(
     album: Album,
     modifier: Modifier = Modifier
 ) {
+    val headers = NetworkHeaders.Builder()
+        .set("User-agent", "PanTracklist/1.0")
+        .build()
 
     val request = ImageRequest
         .Builder(LocalContext.current)
         .data(album.thumbnailUrl)
+        .httpHeaders(headers)
         .error(R.drawable.ic_error_image)
         .placeholder(R.drawable.ic_image_placeholder)
         .crossfade(true)
