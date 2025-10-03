@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.database
+package com.artemissoftware.pantracklist.network
 
 import org.junit.Test
 

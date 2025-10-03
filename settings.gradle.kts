@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "PanTracklist"
 include(":app")
 include(":core:database")
+include(":core:network")
+include(":core:domain")
