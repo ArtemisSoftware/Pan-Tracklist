@@ -5,7 +5,7 @@ import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistThem
 import com.artemissoftware.pantracklist.features.albums.presentation.albums.AlbumsScreen
 import com.artemissoftware.pantracklist.test.TestActivity
 import com.artemissoftware.pantracklist.util.PanTracklistAndroidTest
-import com.artemissoftware.pantracklist.util.dispatcher.MockServerDispatcher
+import com.artemissoftware.pantracklist.util.mockserver.dispatcher.MockServerDispatcher
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.runBlocking
 import org.junit.Rule

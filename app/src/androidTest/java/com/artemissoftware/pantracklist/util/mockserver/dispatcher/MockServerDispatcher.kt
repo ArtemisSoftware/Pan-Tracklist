@@ -1,8 +1,8 @@
-package com.artemissoftware.pantracklist.util.dispatcher
+package com.artemissoftware.pantracklist.util.mockserver.dispatcher
 
-import com.artemissoftware.pantracklist.util.server.ServerMockResponse
-import com.artemissoftware.pantracklist.util.server.ServerMockResponse.*
-import com.artemissoftware.pantracklist.util.server.toMockResponse
+import com.artemissoftware.pantracklist.util.mockserver.MockServerFiles.*
+import com.artemissoftware.pantracklist.util.mockserver.MockServerFiles.Companion.toMockResponse
+import com.artemissoftware.pantracklist.util.mockserver.MockServerFiles.Companion.toMockServerFile
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
@@ -11,9 +11,9 @@ class MockServerDispatcher {
     fun successDispatcher(): Dispatcher {
         return object : Dispatcher() {
             override fun dispatch(request: RecordedRequest): MockResponse {
-                return when (request.path) {
-                    ALBUMS_RESPONSE.path -> ALBUMS_RESPONSE.toMockResponse()
-                    else -> MockResponse().setResponseCode(200).setBody("")
+                return when (request.toMockServerFile()) {
+                    ALBUMS_RESPONSE ->  { ALBUMS_RESPONSE.toMockResponse() }
+                    NO_RESPONSE -> { MockResponse().setResponseCode(200).setBody("") }
                 }
             }
         }
