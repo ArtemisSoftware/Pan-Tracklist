@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.artemissoftware.pantracklist.R
 import com.artemissoftware.pantracklist.core.designsystem.composables.loading.PTLoadingProgress
+import com.artemissoftware.pantracklist.core.presentation.R
 import com.artemissoftware.pantracklist.core.presentation.composables.placeholder.PlaceHolderContent
 import com.artemissoftware.pantracklist.core.presentation.models.ErrorData
 

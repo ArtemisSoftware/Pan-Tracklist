@@ -1,9 +1,8 @@
 package com.artemissoftware.pantracklist.core.presentation.util.extensions
 
-import com.artemissoftware.pantracklist.R
-import com.artemissoftware.pantracklist.core.domain.error.DataError
-import com.artemissoftware.pantracklist.core.domain.error.Error
+import com.artemissoftware.pantracklist.core.presentation.R
 import com.artemissoftware.pantracklist.core.presentation.composables.text.UiText
+import com.artemissoftware.pantracklist.domain.error.DataError
 
 fun Error.toUiText(): UiText {
     return when (this) {

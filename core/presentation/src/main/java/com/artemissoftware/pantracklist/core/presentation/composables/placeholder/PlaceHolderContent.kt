@@ -23,10 +23,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.artemissoftware.pantracklist.R
 import com.artemissoftware.pantracklist.core.designsystem.theme.PanTracklistTheme
 import com.artemissoftware.pantracklist.core.designsystem.theme.dimension
 import com.artemissoftware.pantracklist.core.designsystem.theme.spacing
+import com.artemissoftware.pantracklist.core.presentation.R
 import com.artemissoftware.pantracklist.core.presentation.util.test.CoreTestTags
 import com.artemissoftware.pantracklist.core.presentation.util.test.CoreTestTags.CORE_PLACEHOLDER_CONTENT
 

@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:network"))
     implementation(project(":core:designsystem"))
+    implementation(project(":core:presentation"))
 
     implementation(project(":features:albums:data"))
     implementation(project(":features:albums:domain"))
