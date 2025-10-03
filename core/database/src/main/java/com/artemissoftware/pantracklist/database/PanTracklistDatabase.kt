@@ -1,10 +1,10 @@
-package com.artemissoftware.pantracklist.core.database
+package com.artemissoftware.pantracklist.database
 
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.artemissoftware.pantracklist.core.database.dao.AlbumDao
-import com.artemissoftware.pantracklist.core.database.entities.AlbumEntity
+import com.artemissoftware.pantracklist.database.dao.AlbumDao
+import com.artemissoftware.pantracklist.database.entities.AlbumEntity
 
 @Database(
     entities = [

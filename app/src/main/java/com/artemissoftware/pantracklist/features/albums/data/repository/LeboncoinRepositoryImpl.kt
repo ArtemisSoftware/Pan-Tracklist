@@ -9,8 +9,8 @@ import androidx.paging.map
 import com.artemissoftware.pantracklist.core.domain.Resource
 import com.artemissoftware.pantracklist.core.domain.error.DataError
 import com.artemissoftware.pantracklist.core.domain.map
-import com.artemissoftware.pantracklist.core.database.dao.AlbumDao
-import com.artemissoftware.pantracklist.core.database.entities.AlbumEntity
+import com.artemissoftware.pantracklist.database.dao.AlbumDao
+import com.artemissoftware.pantracklist.database.entities.AlbumEntity
 import com.artemissoftware.pantracklist.features.albums.data.mapper.toAlbum
 import com.artemissoftware.pantracklist.features.albums.data.mapper.toEntity
 import com.artemissoftware.pantracklist.features.albums.data.network.source.LeboncoinApiSource

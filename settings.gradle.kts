@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PanTracklist"
 include(":app")
+include(":core:database")

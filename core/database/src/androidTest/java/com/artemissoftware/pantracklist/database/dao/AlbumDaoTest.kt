@@ -1,12 +1,12 @@
-package com.artemissoftware.pantracklist.core.database.dao
+package com.artemissoftware.pantracklist.database.dao
 
 import androidx.paging.PagingSource
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isInstanceOf
-import com.artemissoftware.pantracklist.core.database.PanTracklistDatabase
-import com.artemissoftware.pantracklist.util.TestInstrumentedData.albumListEntities
+import com.artemissoftware.pantracklist.database.PanTracklistDatabase
+import com.artemissoftware.pantracklist.database.TestData.albumListEntities
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.runBlocking

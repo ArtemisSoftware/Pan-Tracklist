@@ -1,4 +1,4 @@
-package com.artemissoftware.pantracklist.core.database.dao
+package com.artemissoftware.pantracklist.database.dao
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import com.artemissoftware.pantracklist.core.database.entities.AlbumEntity
+import com.artemissoftware.pantracklist.database.entities.AlbumEntity
 
 @Dao
 interface AlbumDao {

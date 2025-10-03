@@ -27,6 +27,8 @@ assertk = "0.26.1"
 de-mannodermaus-android-junit5 = "1.9.3.0"
 kotlinx-coroutines-test = "1.6.0"
 turbine = "0.7.0"
+appcompat = "1.6.1"
+material = "1.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -91,6 +93,8 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -104,3 +108,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 # test
 
 de-mannodermaus-android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "de-mannodermaus-android-junit5" }
+android-library = { id = "com.android.library", version.ref = "agp" }

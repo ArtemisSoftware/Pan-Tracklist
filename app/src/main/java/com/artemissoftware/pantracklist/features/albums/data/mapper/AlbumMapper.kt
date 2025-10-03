@@ -1,6 +1,6 @@
 package com.artemissoftware.pantracklist.features.albums.data.mapper
 
-import com.artemissoftware.pantracklist.core.database.entities.AlbumEntity
+import com.artemissoftware.pantracklist.database.entities.AlbumEntity
 import com.artemissoftware.pantracklist.features.albums.data.network.dto.AlbumDto
 import com.artemissoftware.pantracklist.features.albums.domain.models.Album
 

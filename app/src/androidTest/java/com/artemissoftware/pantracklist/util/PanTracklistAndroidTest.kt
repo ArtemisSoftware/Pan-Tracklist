@@ -2,7 +2,7 @@ package com.artemissoftware.pantracklist.util
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.artemissoftware.pantracklist.core.database.PanTracklistDatabase
+import com.artemissoftware.pantracklist.database.PanTracklistDatabase
 import dagger.hilt.android.testing.HiltAndroidRule
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After

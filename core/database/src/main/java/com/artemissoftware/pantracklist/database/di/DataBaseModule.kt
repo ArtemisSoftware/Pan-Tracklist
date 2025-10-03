@@ -1,8 +1,8 @@
-package com.artemissoftware.pantracklist.core.database.di
+package com.artemissoftware.pantracklist.database.di
 
 import android.content.Context
 import androidx.room.Room
-import com.artemissoftware.pantracklist.core.database.PanTracklistDatabase
+import com.artemissoftware.pantracklist.database.PanTracklistDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

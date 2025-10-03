@@ -1,6 +1,6 @@
 package com.artemissoftware.pantracklist.features.albums.data.di
 
-import com.artemissoftware.pantracklist.core.database.dao.AlbumDao
+import com.artemissoftware.pantracklist.database.dao.AlbumDao
 import com.artemissoftware.pantracklist.features.albums.data.network.source.LeboncoinApiSource
 import com.artemissoftware.pantracklist.features.albums.data.repository.LeboncoinRepositoryImpl
 import com.artemissoftware.pantracklist.features.albums.domain.repository.LeboncoinRepository
