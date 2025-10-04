@@ -5,10 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Assert all nodes on card are available()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="AlbumsScreenTest">
+      <SelectionState runConfigName="All Tests">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
