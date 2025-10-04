@@ -9,7 +9,6 @@ It supports offline usage and leverages a modern Android stack including Jetpack
 
 - ✅ Displays album titles and images
 - ✅ Fetches JSON from a remote endpoint at runtime
-- ✅ Uses a custom `User-Agent` header for image requests
 - ✅ Caches data locally with Room for offline access
 - ✅ Supports pagination via Paging 3
 - ✅ Handles configuration changes
@@ -58,7 +57,6 @@ This modular approach ensures:
 - Data is retrieved from:  
   `https://static.leboncoin.fr/img/shared/technical-test.json`
 - Retrofit is configured with a Moshi converter.
-- A custom `User-Agent` header is added to all requests, especially for image loading.
 
 ### 🖼️ Image Loading with Custom Headers
 
@@ -77,7 +75,7 @@ This modular approach ensures:
 
 The app includes:
 
-- ✅ **Unit tests** for UseCases and Repositories
+- ✅ **Unit tests** for Mappers, Repositories and ViewModels
 - ✅ **Instrumented tests** using in-memory Room and Hilt test modules
 - ✅ **MockWebServer** to mock network responses
 - ✅ **UI tests** with Compose Test APIs
