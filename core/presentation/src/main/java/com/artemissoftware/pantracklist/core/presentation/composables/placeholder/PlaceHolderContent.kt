@@ -61,6 +61,7 @@ fun PlaceHolderContent(
         Icon(
             painter = painterResource(id = icon),
             contentDescription = null,
+            tint = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier
                 .size(MaterialTheme.dimension.iconSizeBig)
                 .alpha(alphaAnimation),
